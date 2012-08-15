@@ -197,6 +197,7 @@ module RailsAdminImport
   end
 end
 
-class ActiveRecord::Base
-  include RailsAdminImport::Import
+module ActiveModel
+  extend RailsAdminImport::Import
 end
+
