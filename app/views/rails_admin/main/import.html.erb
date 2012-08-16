@@ -13,7 +13,7 @@
 
 <h1>Import <%= @abstract_model.to_param.titleize %></h1>
 
-<small>The following fields may be included in the import file</small>
+<small>The following fields must be included in the import file</small>
 <table width="100%" cellpadding="0" cellspacing="0">
 <tr>
 <td width="20%" valign="top">
@@ -78,7 +78,7 @@
 <%= form_tag rails_admin.import_url(@abstract_model.to_param), :multipart => true do |f| -%>
   <%= file_field_tag :file %>
 
-  <p>
+  <!--p>
   <%= check_box_tag :update_if_exists %> Update if Exists<br />
   Update lookup field
   <select name="update_lookup">
@@ -86,7 +86,7 @@
   	<option value="<%= key %>"><%= key %></option>
 	<% end -%>
   </select>
-  </p>
+  </p-->
 
   <% [@abstract_model.model.belongs_to_fields, @abstract_model.model.many_fields].flatten.each do |field| -%>
   <div style="display:inline-block; width: 45%;background:#cecece;margin: 5px;padding: 5px;">
